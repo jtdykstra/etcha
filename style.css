@@ -1,11 +1,40 @@
 @import "reset.css";
 
-#content {
+#pad {
     display: grid;
     justify-content: center;
     align-content: center;
     grid-template-rows: repeat(64, 0.5vw);
     grid-template-columns: repeat(64, 0.5vw);
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vw;
 }
+
+button {
+    padding:0.35em 1.2em;
+    border:0.1em solid #3d3a3a;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300; 
+    background-color: transparent;
+    color:#3d3a3a;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    color: #3d3a3a;
+    background-color: white;
+  }
+
