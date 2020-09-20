@@ -27,7 +27,12 @@ for (let outerGridInd = 0; outerGridInd < GRID_SIZE*GRID_SIZE; ++outerGridInd) {
 let gridNodes = document.querySelectorAll('.grid-node');
 
 gridNodes.forEach((n) => {
-    n.addEventListener('mouseenter', colorSquare);
+    if(size.matches) {
+        n.addEventListener('touchenter', colorSquare);
+    }
+    else {
+        n.addEventListener('mouseenter', colorSquare);
+    }
 });
 
 window.addEventListener('keydown', keyDownHandler);
