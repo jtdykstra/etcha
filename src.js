@@ -35,6 +35,13 @@ gridNodes.forEach((n) => {
     }
 });
 
+window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(e) {
+    console.log(e);
+}
+
+
 window.addEventListener('keydown', keyDownHandler);
 window.addEventListener('keyup', keyUpHandler);
 
