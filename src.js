@@ -1,5 +1,11 @@
-const GRID_SIZE = 64;
-console.log("starting loop!");
+let GRID_SIZE = 64;
+let size = window.matchMedia("(max-width: 600px)");
+if(size.matches) {
+    GRID_SIZE = 32;
+    console.log("matches");
+}
+
+console.log(GRID_SIZE);
 
 let coordX = 0;
 let coordY = GRID_SIZE - 1;
