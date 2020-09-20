@@ -27,18 +27,35 @@ for (let outerGridInd = 0; outerGridInd < GRID_SIZE*GRID_SIZE; ++outerGridInd) {
 let gridNodes = document.querySelectorAll('.grid-node');
 
 gridNodes.forEach((n) => {
-    if(size.matches) {
-        n.addEventListener('touchenter', colorSquare);
-    }
-    else {
-        n.addEventListener('mouseenter', colorSquare);
-    }
+    n.addEventListener('mouseenter', colorSquare);
 });
 
-window.addEventListener("deviceorientation", handleOrientation, true);
+window.addEventListener("deviceorientation", handleOrientation);
 
 function handleOrientation(e) {
-    console.log(e);
+    xMove = 0;
+    yMove = 0;
+    
+    gamma = document.querySelector('#gamma');
+    beta = document.querySelector('#beta');
+
+    gamma.innerText = "gamma " + e.gamma;
+    beta.innerText = "beta " + e.beta;
+
+    if (e.gamma < -5) {
+        xMove = -1;
+    }
+    if (e.gamma > 5) {
+        xMove = 1;
+    }
+    if (e.beta > 5) {
+        yMove = -1;
+    }
+    if (e.beta < -5) {
+        yMove = 1;
+    }
+    
+    move(xMove, yMove);
 }
 
 
